@@ -41,6 +41,10 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.sourceLevelText = new System.Windows.Forms.TextBox();
+            this.targetLevelText = new System.Windows.Forms.TextBox();
+            this.cpyButton = new System.Windows.Forms.Button();
+            this.checkBoxCPYMode = new System.Windows.Forms.CheckBox();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -51,7 +55,7 @@
             this.fileToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(396, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(425, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -71,7 +75,7 @@
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
@@ -79,7 +83,7 @@
             // 
             this.saveToolStripMenuItem.Enabled = false;
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
@@ -87,26 +91,26 @@
             // 
             this.saveAsToolStripMenuItem.Enabled = false;
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.saveAsToolStripMenuItem.Text = "Save As...";
             this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(120, 6);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -114,9 +118,9 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 436);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 515);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(396, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(425, 22);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -132,7 +136,7 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(59, 27);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(325, 21);
+            this.comboBox1.Size = new System.Drawing.Size(354, 21);
             this.comboBox1.TabIndex = 2;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -153,15 +157,55 @@
             this.checkedListBox1.FormattingEnabled = true;
             this.checkedListBox1.Location = new System.Drawing.Point(12, 54);
             this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(372, 379);
+            this.checkedListBox1.Size = new System.Drawing.Size(401, 454);
             this.checkedListBox1.TabIndex = 4;
             this.checkedListBox1.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBox1_ItemCheck);
+            // 
+            // sourceLevelText
+            // 
+            this.sourceLevelText.Location = new System.Drawing.Point(60, 4);
+            this.sourceLevelText.Name = "sourceLevelText";
+            this.sourceLevelText.Size = new System.Drawing.Size(100, 20);
+            this.sourceLevelText.TabIndex = 5;
+            this.sourceLevelText.Text = "source";
+            // 
+            // targetLevelText
+            // 
+            this.targetLevelText.Location = new System.Drawing.Point(213, 4);
+            this.targetLevelText.Name = "targetLevelText";
+            this.targetLevelText.Size = new System.Drawing.Size(100, 20);
+            this.targetLevelText.TabIndex = 6;
+            this.targetLevelText.Text = "target";
+            // 
+            // cpyButton
+            // 
+            this.cpyButton.Location = new System.Drawing.Point(166, 3);
+            this.cpyButton.Name = "cpyButton";
+            this.cpyButton.Size = new System.Drawing.Size(41, 21);
+            this.cpyButton.TabIndex = 7;
+            this.cpyButton.Text = "CPY";
+            this.cpyButton.UseVisualStyleBackColor = true;
+            this.cpyButton.Click += new System.EventHandler(this.cpyButton_Click);
+            // 
+            // checkBoxCPYMode
+            // 
+            this.checkBoxCPYMode.AutoSize = true;
+            this.checkBoxCPYMode.Location = new System.Drawing.Point(319, 6);
+            this.checkBoxCPYMode.Name = "checkBoxCPYMode";
+            this.checkBoxCPYMode.Size = new System.Drawing.Size(96, 17);
+            this.checkBoxCPYMode.TabIndex = 8;
+            this.checkBoxCPYMode.Text = "CPY Only True";
+            this.checkBoxCPYMode.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(396, 458);
+            this.ClientSize = new System.Drawing.Size(425, 537);
+            this.Controls.Add(this.checkBoxCPYMode);
+            this.Controls.Add(this.cpyButton);
+            this.Controls.Add(this.targetLevelText);
+            this.Controls.Add(this.sourceLevelText);
             this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
@@ -196,6 +240,10 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.TextBox sourceLevelText;
+        private System.Windows.Forms.TextBox targetLevelText;
+        private System.Windows.Forms.Button cpyButton;
+        private System.Windows.Forms.CheckBox checkBoxCPYMode;
     }
 }
 
